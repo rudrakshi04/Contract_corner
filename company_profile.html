@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company Profile</title>
+  <style>
+    /* Header styles */
+.header {
+    background-image: url("profilephoto.png") ;
+  color : #fff;
+  padding: 10px 20px;
+}
+
+.search-tab {
+  display: flex;
+  align-items: center;
+}
+
+.search-tab input[type="text"] {
+  flex: 1;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  
+}
+
+.search-tab button {
+  background-color: #fff;
+  color: #4267B2;
+  border: none;
+  padding: 8px 15px;
+  
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Profile header styles */
+.profile-header {
+  text-align: center;
+  background-color: rgba(0, 191, 255, 0.675);
+}
+
+.cover-photo {
+  width: 100%;
+  height: 200px; /* Adjust height as needed */
+  background-color: #3498db; /* LinkedIn blue */
+  background-image: url(profilehead.png);
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  background-image: url(profilephoto.png);
+  background-size: cover;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 5px solid #fff;
+  margin: -75px auto 0; /* Negative margin to center vertically */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.profile-name {
+  margin-top: 10px;
+  font-size: 28px;
+  color: #2c3e50;
+}
+
+.profile-info {
+  margin-top: 10px;
+  color: #555;
+}
+
+.profile-info p {
+    color: #555;
+  margin: 10px 0;
+  font-size: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+/* Work orders styles (same as previous) */
+
+/* Animation for fading in work orders (same as previous) */
+.sub-header {
+  color: #2c3e50;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.work-orders {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+  
+}
+
+.work-order {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.work-order img {
+  width: 100%;
+  height: 200px;
+  
+  object-fit: cover;
+}
+
+.work-order .details {
+  padding: 10px;
+}
+
+.work-order .title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.work-order .rating {
+  color: #3498db;
+  font-size: 0.9em;
+}
+
+/* Animation for fading in work orders */
+.work-order {
+  opacity: 0;
+  animation: fadeInAnimation 1s ease-in forwards;
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="search-tab">
+    <input type="text" placeholder="Search...">
+
+    <button>Search</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="profile-header">
+    <div class="cover-photo"></div>
+    <div class="profile-picture">
+        
+        
+    </div>
+    <h1 class="profile-name">Singapore Business Park</h1>
+    <div class="profile-info">
+      <p>Industry: Business park</p>
+      <p>Location: Mumbai, India </p>
+      <p>Description: Welcome to Singapore Business Park, where innovation meets opportunity! 🏢✨ We're dedicated to providing a dynamic workspace environment that fosters creativity,
+        collaboration, and growth. Join us as we empower entrepreneurs, startups, and established businesses to thrive and succeed in a vibrant community.
+        Discover the perfect space to ignite your business passion and unlock your full potential with Business Park!
+        
+        .</p>
+      <p>Website: <a href="http://www.singaporepark.com">www.singaporepark.com</a></p>
+      <p>Contact: Singaporepark@gmail.com</p>
+    </div>
+  </div>
+
+  <!-- Previous Work Orders Section -->
+    <!-- Work orders content here -->
+     <h2 class="sub-header">Previous Work Orders</h2>
+  <div class="work-orders">
+    <div class="work-order fade-in">
+      <img src="renovation.png" alt="Site Image 1">
+      <div class="details">
+        <p class="title">Renovation of Building</p>
+        <p class="rating">Rating: 4.5</p>
+      </div>
+    </div>
+    <div class="work-order fade-in">
+      <img src="parking.png" alt="Site Image 2">
+      <div class="details">
+        <p class="title">Parking Construction </p>
+        <p class="rating">Rating: 4.8</p>
+      </br>
+    </br>
+      </div>
+    </div>
+  </div>
+
+</div>
+</br>
+</br>
+</body>
+</html>

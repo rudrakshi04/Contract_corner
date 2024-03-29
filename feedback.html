@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Page</title>
+  <style>
+    .feedback {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .stars {
+      color: #6f6555;
+    }
+
+    .star {
+      font-size: 24px;
+      cursor: pointer;
+      margin: 0 5px;
+    }
+
+    .star.selected {
+      color: #FFD700;
+    }
+
+    textarea {
+      width: 100%;
+      margin-top: 10px;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="feedback">
+    <h2>Website Feedback</h2>
+    <p>We would love to hear your thoughts about our website! Please rate your experience:</p>
+    <div class="stars">
+      <span class="star" data-value="1">&#9733;</span>
+      <span class="star" data-value="2">&#9733;</span>
+      <span class="star" data-value="3">&#9733;</span>
+      <span class="star" data-value="4">&#9733;</span>
+      <span class="star" data-value="5">&#9733;</span>
+    </div>
+    <textarea placeholder="Tell us more about your experience..." rows="4"></textarea>
+    <button>Submit</button>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const stars = document.querySelectorAll(".star");
+
+      stars.forEach(function(star) {
+        star.addEventListener("click", function() {
+          const value = parseInt(this.getAttribute("data-value"));
+          const selectedStars = document.querySelectorAll(".star");
+
+          selectedStars.forEach(function(s) {
+            const sValue = parseInt(s.getAttribute("data-value"));
+            if (sValue <= value) {
+              s.classList.add("selected");
+            } else {
+              s.classList.remove("selected");
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

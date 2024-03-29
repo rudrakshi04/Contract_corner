@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Dashboard</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins','sans-serif';
+}
+body{
+    background-color: #261c3c;
+    color:#331e38;
+    overflow-x: hidden;
+}
+
+a{
+    text-decoration: none;
+    color: #f9f9f9;
+    
+}
+.navbar{
+     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #331e38;
+    padding: 10px 6%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.5s, box-shadow 0.5s;
+}
+.Logo img{
+    width: 30px;
+    margin-right: 15px;
+    display: block;
+}
+.navbar-centre ul li{
+    display: inline-block;
+    list-style: none;
+}
+.navbar-centre ul li a{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin: 5px 8px;
+    padding-right: 5px;
+}
+.navbar-centre ul li a img{
+    width: 30px;
+} 
+.search-bar{
+    background: #fff;
+    width: 250px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+}
+.navbar-left{
+    display: flex;
+    align-items: center;
+}
+.search-bar img{
+    width: 14px;
+}
+.search-bar input{
+    width: 100%;
+    background: transparent;
+    padding: 8px;
+    outline: none;
+    border: 0;
+}
+/* //nav-bar   end // */
+
+.container{
+    padding: 20px 6%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;  
+    margin: 0px;
+    padding: 0px;  
+}
+/* left-sidebar */
+.left-sidebar{
+    flex-basis: 25%; 
+    align-self: flex-start;
+    position: sticky;
+}
+.sidebar-profile-box{
+    background: #fff;
+}
+
+.sidebar-profile-info{
+    padding: 0 25px 50px  ;
+    font-weight: 500;
+}
+
+.sidebar-profile-info img{
+    width: 90px;
+    border-radius: 50%;
+    padding: 10px;
+    margin-top: -45px;
+    background: #fff;
+}
+.sidebar-profile-info h1{
+    font-size: 20px;
+    font-weight: 600;
+    color: #222;
+}
+.sidebar-profile-info h3{
+    font-size: 14px;
+    font-weight: 500;
+    color: #777;
+    margin-top: 20px;
+}
+.rateing{
+    background-color: #ebeff6;
+    color: #050505;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+.rate{
+    color: #e8eaed;
+    font-size: larger;
+    border: fff;
+    border-radius: 2px solid black;
+    margin-left: 50px;
+   padding-top: 10px;
+}
+/* right sideba  */
+.right-sidebar{
+    flex-basis: 25%;
+    align-self: flex-start;
+}
+.sidebar {
+    flex-basis: 25%;
+    padding: 20px;
+    background-color: #f2eeee;
+    height: 80%;
+}
+
+.recommended {
+    margin-bottom: 20px;
+}
+
+.recommended h2 {
+    margin-top: 0;
+    color: rgb(1, 1, 1);
+}
+
+.recommended-item {
+    margin-bottom: 10px;
+}
+
+.recommended-item a {
+    text-decoration: none;
+    color: rgb(58, 7, 227);
+    font-weight: 600;
+}
+/* .right-sidebar Lrec */
+.lrec{
+    background-color: #fffbfb;
+    color: #000000;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+.vrec{
+    background-color: #fffbfb;
+    color: #000000;
+    padding-left: 10px;
+    margin-top: 10px;
+
+}
+.txt{
+   text-align: center;
+   margin-left: 10px;
+}
+.box{
+    background-color: #fbf7f7;
+    margin-top: 10px;
+   
+} 
+.box1{
+    border: 2px solid rgb(222, 214, 214);
+    border-radius: 10px;
+    width: fit-content;
+    display: flex;
+    margin-bottom: 10px;
+   padding-right: 50px;
+   padding-top: 10px;
+}
+
+.box2 {
+    border: 2px solid rgb(222, 214, 214);
+    border-radius: 10px;
+    width: fit-content;
+    display: flex;
+    margin-bottom: 10px;
+   padding-right: 50px;
+   padding-top: 10px;
+}
+
+
+.box3 {
+    border: 2px solid rgb(222, 214, 214);
+    border-radius: 10px;
+    width: fit-content;
+    display: flex;
+ 
+    margin-bottom: 10px;
+   padding-right: 50px;
+   padding-top: 10px;
+}
+
+/* main content  */
+.main-content{
+    flex-basis: 47%;
+   }
+.create-post{
+    background: #fff;
+}
+.create-post-input{
+    padding: 20px, 25px, 10px;
+    display: flex;
+    align-items: flex-start;
+}
+.create-post-input img{
+    width: 35px;
+    border-radius: 50%;
+    margin-right: 10%;
+}
+.create-post-input textarea{
+    width: 100%;
+    border: 0;
+    outline: 0;
+    resize: none;
+    background: transparent;
+    margin-top: 8px;
+}
+::placeholder{
+    font-weight: 500;
+}
+.create-post-links{
+    display: flex;
+    align-items: flex-start;
+}
+.create-post-links li{
+    list-style: none;
+    border-top: 1px solid#ccc;
+    border-right: 1px solid#ccc;
+    flex-basis: 25%;
+    height: 40px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.create-post-links li img{
+    width: 15px;
+    margin-right: 5px;
+}
+.create-post-links li{
+    background: #e2d7e5;
+    color: #331e38;
+    border-top: 0;
+    border-right: 0;
+}
+.create-post-links li:last-child{
+    background: #331e38;
+    color: #fff;
+    border-top: 0;
+    border-right: 0;
+}
+.post{
+    background: #fff;
+    padding: 20px 25px 5px;
+    margin: 5px 0 15px;
+}
+.post-author{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+.post-author img{
+    width: 35px;
+    border-radius: 50%;
+    margin-right: 10%;
+    margin-top: 5px;
+}
+.post-author h1{
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+.post-author small{
+    display: block;
+    margin-bottom: -2px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    width: 2000px;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+.footer-box{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+  .footer-section {
+    
+    margin: 0 20px;
+  }
+
+  .footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .footer-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 5px;
+  }
+
+  .footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .company-info p {
+    font-size: 14px;
+  }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="/index.html" class="Logo">Contract Corner<img src="/images/logo.jpeg"></a>
+            <div class="search-bar">
+                <img src="/images/search.jpeg">
+                <input type="text" placeholder="search">
+            </div>
+        </div>
+
+        <div class="navbar-centre">
+            <ul>
+                <li><a href="#" <img src="/images/home.jpeg"><span>Home</span></a></li>
+                <li><a href="/dashboard_notification.html" <img src="/images/notification.jpeg"><span>Notifications</span></a></li>
+                <li><a href="/dashboard_activity.html" <img src="/images/activity.jpeg"><span>Activity</span></a></li>
+            </ul>
+        </div>
+        <div class="navbar-right">
+            <a href="/vendor_profile.html">My Profile</a>
+            <img src="/images/user-1.jpeg" width="30px" alt="nav-profile-img">
+        </div>
+    </nav>
+    <!-- nav-bar close -->
+
+    <div class="container">
+        <!-- left sidebar -->
+        <div class="left-sidebar">
+            <div class="sidebar-profile-box">
+                <img src="/images/cover-pic.jpeg" width="80%">
+                <div class="sidebar-profile-info">
+                    <img src="/images/user-1.jpeg">
+                    <h1>Tushar Singh</h1>
+                    <h3>Vendor</h3>
+                    <p>username:Pingf</p>
+                    <p>Email: tushar98@gmail.com</p>
+                    <p>contact no: 9009889962</p>
+
+                </div>
+            </div>
+            <div class="rating">
+                <p>Kindly rate our website below: </p>
+
+                <a class="rate" href="/feedback.html">Kindly rate our website here!</a>
+            </div>
+        </div>
+        <!-- main -->
+        <div class="main-content">
+            <div class="create-post">
+                <div class="create-post-input">
+                    <img src="/images/user-1.jpeg">
+                    <textarea rows="2" placeholder="Post work order"></textarea>
+                </div>
+            </div>
+            <div class="create-post-links">
+                <li><img src="/images/attachment.jpeg">attachment</li>
+                <li><img src="/images/camera.jpeg">camera</li>
+                <li><img src="/images/share.jpeg">share</li>
+                <li>Post</li>
+            </div>
+
+
+            <div class="post">
+                <div class="post-author">
+                    <img src="/images/itc.jpeg">
+                    <div>
+                        <h1>ITC</h1>
+                        <small>ITC Limited:Enduring Value</small>
+
+                        <p>Urban Development Corporation is seeking proposals for a city infrastructure upgrade project
+                            aimed at modernizing essential services and enhancing urban livability. The project involves
+                            renovating roads, upgrading public transportation systems, and implementing sustainable
+                            energy solutions. Contractors with expertise in urban development and infrastructure
+                            upgrades are encouraged to submit bids.</p>
+                        <p><strong>Project Details:</strong></p>
+                        <ul>
+                            <li>Location: CityName</li>
+                            <li>Project Type: Infrastructure Upgrade</li>
+                            <li>Estimated Budget: $5,000,000</li>
+                            <li>Timeline: 18 months</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="post">
+                <div class="post-author">
+                    <img src="/images/agl.jpeg">
+                    <div>
+                        <h1>Avantika Pvt. ltd.</h1>
+                        <small>ITC Limited:Enduring Value</small>
+
+                        <p>Urban Development Corporation is seeking proposals for a city infrastructure upgrade project
+                            aimed at modernizing essential services and enhancing urban livability. The project involves
+                            renovating roads, upgrading public transportation systems, and implementing sustainable
+                            energy solutions. Contractors with expertise in urban development and infrastructure
+                            upgrades are encouraged to submit bids.</p>
+                        <p><strong>Project Details:</strong></p>
+                        <ul>
+                            <li>Location: CityName</li>
+                            <li>Project Type: Infrastructure Upgrade</li>
+                            <li>Estimated Budget: $5,000,000</li>
+                            <li>Timeline: 18 months</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="post">
+                <div class="post-author">
+                    <img src="/images/tata.jpeg">
+                    <div>
+                        <h1>TATA Industries</h1>
+                        <small>TATA Pvt. Limited:Work Proffessionaly</small>
+
+                        <p>Urban Development Corporation is seeking proposals for a city infrastructure upgrade project
+                            aimed at modernizing essential services and enhancing urban livability. The project involves
+                            renovating roads, upgrading public transportation systems, and implementing sustainable
+                            energy solutions. Contractors with expertise in urban development and infrastructure
+                            upgrades are encouraged to submit bids.</p>
+                        <p><strong>Project Details:</strong></p>
+                        <ul>
+                            <li>Location: CityName</li>
+                            <li>Project Type: Infrastructure Upgrade</li>
+                            <li>Estimated Budget: $5,000,000</li>
+                            <li>Timeline: 18 months</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <!-- right sidebar  -->
+        <div class="right-sidebar">
+            <div class="sidebar">
+                <div class="recommended">
+                    <h2>Recommendation</h2>
+                    <div class="recommended-item"><strong>Apex Construction Co. :</strong>
+                        <p>Bridge construction, and Road Marking.</p>
+                        <i class="fa-solid fa-arrow-right"></i> <a class="an" href="#">Apply for work</a>
+                    </div>
+
+                    <div class="recommended-item"><strong>Summit Constructors : </strong>
+                        <p> Roofing , Plumbing, Electrical Work</p>
+                        <i class="fa-solid fa-arrow-right"></i> <a href="#">Apply for work</a>
+                    </div>
+
+                    <div class="recommended-item"><strong>Evergreen Builders :</strong>
+                        <p>structural modifications, flooring installation, painting,</p>
+                        <i class="fa-solid fa-arrow-right"></i> <a href="#">Apply for work</a>
+                    </div>
+
+                    <div class="recommended-item"><strong>Bechtel Corporation :</strong>
+                        <p>construction of classrooms, gymnasiums, and other facilities,</p>
+                        <i class="fa-solid fa-arrow-right"></i> <a href="#">Apply for work</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lrec">
+                <h2>Labour Recommendation :</h2>
+                <div class="box">
+                    <div class="box1" >
+                        <img class="img1" src="/images/l1.jpeg" alt="Profile" width="40px" height="40px">
+                        <div class="txt">
+                            <p>Name :Ramu Shankar</p>
+                            <p>Contact : 9083474093</p>
+                            <a href="/labour_profile.html">Click on </a>
+                     
+                        </div>
+                    </div>
+                    <div class="box2">
+                        <img class="img1" src="/images/l2.jpeg" alt="Profile" width="40px" height="40px">
+                        <div class="txt">
+                            <p>Name :Rahul Jain</p>
+                            <p>Contact : 9083474093</p>
+                        </div>
+                    </div>
+                    <div class="box3">
+                        <img class="img1" src="/images/l3.jpeg" alt="Profile" width="40px" height="40px">
+                        <div class="txt">
+                            <p>Name :Shyam rathore</p>
+                            <p>Contact : 9083474093</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="vrec">
+                <h2>Vendour Recommendation:</h2>
+                <div class="box">
+                    <div class="box1">
+                        <img class="img1" src="/images/v3.jpeg" alt="Profile" width="40px" height="40px">
+                        <div class="txt">
+                            <p>Name :Priyanshu Yadav </p>
+                            <p>Contact : 9009889962</p>
+                            <p>Email : piyu04@gmail.com</p>
+                           
+                        </div>
+                    </div>
+                    <div class="box2">
+                        <img class="img1" src="/images/v1.avif" alt="Profile" width="40px" height="40px">
+                        <div class="txt">
+                            <p>Name : Anvi Mehta</p>
+                            <p>Contact : 9083474093</p>
+                            <p>Email : An7v@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="box3">
+                        <img class="img1" src="/images/v2.jpeg" alt="Profile" width="40px" height="40px">
+                        <div class="txt">
+                            <p>Name : Sneha Purohit </p>
+                            <p>Contact : 9000774093</p>
+                            <p>Email : sneha@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-box">
+
+                <div class="footer-section company-info">
+                    <h4>Company Information</h4>
+                    <p>Your Freelancing Company Name<br>
+                        Your Company Address<br>
+                        Phone: Your Company Phone Number<br>
+                        Email: Your Company Email Address<br>
+                        &copy; <span id="current-year"></span> All rights reserved.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>
+                        <p>Get to Know Us</p>
+                    </h4>
+                    <ul>
+                        <li> About Us</li>
+                        <li>Careers</li>
+                        <li>Press Releases</li>
+                        <li>Amazon Science</li>
+                    </ul>
+                </div>
+
+                <div class="foot-panel3">
+                    <div class="logo"></div>
+                </div>
+            </div>
+
+            <div class="copyright">© 2024, ContractCorner.com, Inc. or its affiliates</div>
+        </footer>
+
+</body>
+
+</html>

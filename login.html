@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signup/Login Page</title>
+<style>
+    /* Style for login/signup container */
+    .container {
+        width: 300px;
+        margin: 100px auto;
+        text-align: center;
+    }
+
+    /* Style for tabs */
+    .tab {
+        display: inline-block;
+        margin: 10px;
+        padding: 10px 20px;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    /* Style for active tab */
+    .tab.active {
+        background-color: #ccc;
+    }
+
+    /* Style for login/signup form */
+    .form {
+        display: none;
+        margin-top: 20px;
+    }
+
+    /* Style for active form */
+    .form.active {
+        display: block;
+    }
+
+    /* Style for input fields */
+    input[type="text"], input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    /* Style for login/signup button */
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+    }
+    .btn a {
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    padding: 10px 20px;
+    margin-left: 0px;
+    margin-top: 15px;
+    border: 2px solid rgb(13, 13, 13);
+    border-radius: 8px;
+    background-color: #007bff;
+    color: rgb(251, 250, 250);
+}
+    /* Style for links */
+    a {
+        text-decoration: none;
+        color: #007bff;
+        margin-top: 10px;
+        display: inline-block;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="tabs">
+        <div class="tab active" id="loginTab">Login</div>
+        <div class="tab" id="signupTab">Signup</div>
+    </div>
+    <!-- Login form -->
+    <form class="form active" id="loginForm">
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <a href="/labor_login.html" class="labour-link"id="labourLogin">If you're labour login here</a>
+       <div class="btn">
+        <a href="/main_dashboard.html">Login</a>
+      </div> 
+
+        
+    </form>
+    <!-- Signup form -->
+    <form class="form" id="signupForm">
+        <a href="/company_signup.html" class="signup-link" id="companySignup">Signup as Company</a><br>
+        <a href="/vendor_signup.html" class="signup-link" id="vendorSignup">Signup as Vendor</a><br>
+        <a href="/labour_signup.html" class="signup-link" id="laborSignup">Signup as Labor</a>
+    </form>
+</div>
+
+<script>
+    // Get tab elements
+    const loginTab = document.getElementById('loginTab');
+    const signupTab = document.getElementById('signupTab');
+
+    // Get form elements
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+
+    // Toggle between login/signup forms
+    loginTab.addEventListener('click', function() {
+        loginTab.classList.add('active');
+        signupTab.classList.remove('active');
+        loginForm.classList.add('active');
+        signupForm.classList.remove('active');
+    });
+
+    signupTab.addEventListener('click', function() {
+        signupTab.classList.add('active');
+        loginTab.classList.remove('active');
+        signupForm.classList.add('active');
+        loginForm.classList.remove('active');
+    });
+
+    // Handle signup links
+    const companySignup = document.getElementById('companySignup');
+    const vendorSignup = document.getElementById('vendorSignup');
+    const laborSignup = document.getElementById('laborSignup');
+
+    companySignup.addEventListener('click', function() {
+        // Redirect to company signup page
+        window.location.href = 'company_signup.html';
+    });
+
+    vendorSignup.addEventListener('click', function() {
+        // Redirect to vendor signup page
+        window.location.href = 'vendor_signup.html';
+    });
+
+    laborSignup.addEventListener('click', function() {
+        // Redirect to labor signup page
+        window.location.href = 'labor_signup.html';
+    });
+</script>
+</body>
+</html>

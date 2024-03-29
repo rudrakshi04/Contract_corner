@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notification Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .heading {
+      background-color: #042144f2;
+      text-align: center;
+      margin-left: 140px;
+      margin-right: 125px;
+      color: #fdfdff;
+      border: 2px solid black;
+      padding: 8px;
+      transition: all 0.3s;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 30px;
+      background-color: #c8b6ff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s;
+    }
+
+    .notification {
+      padding: 10px;
+      margin-bottom: 30px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f0e6ef;
+      box-shadow: 10px 10px 20px rgba(160, 0, 246, 0.9);
+      transition: all 0.3s;
+    }
+
+    .notification-heading {
+      color: rgb(0, 0, 0);
+      font-weight: bold;
+      font-size: 20px;
+      margin-bottom: 30px;
+      transition: all 0.3s;
+    }
+
+    .notification-content {
+      font-size: 20px;
+      transition: all 0.3s;
+    }
+
+    .notification:hover {
+      transform: translateY(-5px);
+      box-shadow: 10px 10px 20px rgba(160, 0, 246, 0.6);
+    }
+
+    .notification-heading:hover {
+      color: #5e548e;
+    }
+
+    .notification-content:hover {
+      color: #5e548e;
+    }
+
+    .notification a {
+      color: #5e548e;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .notification a:hover {
+      color: #222;
+    }
+
+    .heading:hover,
+    .container:hover {
+      transform: scale(1.02);
+    }
+  </style>
+</head>
+<body>
+  <div class="heading">
+    <h1>Notifications</h1>
+  </div>
+
+  <div class="container">
+    <div class="notification">
+      <div class="notification-heading">New Tender Request</div>
+      <div class="notification-content"> Company- Tata Limited posted a new tender request.
+        <br>
+        <br>
+        <a href="URL">Click to know more</a>
+      </div>
+    </div>
+    <div class="notification">
+      <div class="notification-heading">Tender Response Sent</div>
+      <div class="notification-content">Your response to a tender has been successfully sent to Abhay private ltd.
+        <br>
+        <br>
+        <a href="URL">Edit response</a>
+      </div>
+    </div>
+    <div class="notification">
+      <div class="notification-heading">Profile Rated</div>
+      <div class="notification-content">A company owner has rated your profile.
+        <br>
+        <a href="URL">See review</a>
+      </div>
+    </div>
+    <div class="notification">
+      <div class="notification-heading">Tender Deadline Reminder</div>
+      <div class="notification-content">Reminder: Deadline to send tender for Project by HardTech is approaching.
+        <br>
+        <a href="URL">Give response</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

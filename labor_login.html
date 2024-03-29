@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labour Log In page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <style> 
+   body
+   {
+      background-color: #2f4f4f;
+      margin: 0;
+      padding: 0;
+   }
+.container {
+font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color:  #fff;
+}
+.head{
+    margin-bottom: 40px
+}
+.ihead{
+    font-size: 50px;
+}
+.up {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+.form-group {
+    margin-bottom: 20px;
+    max-height: 65px;
+    transition: max-height 0.5s;
+    overflow: hidden;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #665858;
+    border-radius: 5px;
+    margin: 5px;
+}
+p{
+    font-size: small;
+}
+p:hover
+{
+    color: red;
+}
+/* button */
+.btn a {
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    padding: 10px 20px;
+    margin-left: 250px;
+    margin-top: 15px;
+    border: 2px solid rgb(13, 13, 13);
+    border-radius: 8px;
+    background-color: #007bff;
+    color: rgb(251, 250, 250);
+}
+a :hover {
+    color: #f9f1f2;
+}
+   </style>
+</head>
+<body>
+     <div class="container">
+        <img src="/images//logo.jpeg" width="15%">
+        <h1 class="head">Contract Corner</h1>
+        
+        <h1 class="up">Log In</h1>
+        
+            <div class="form-group"> <!--email -->
+                <label for="email">Email :</label>
+                <i class="fa-regular fa-envelope"></i> 
+                <input type="email" placeholder="Enter Your Email Address ">
+            </div>
+
+            <div class="form-group"> <!--password -->
+                <label for="password">Password :</label>
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" placeholder="Password">
+            </div>
+            <p>Forget Password.</p>
+
+            <div class="btn"> <!--Button-->
+                <a href="/labour_dashboard.html">Log In</a>
+        </div>
+         
+        </form>
+    </div>
+</body>
+</html>
+</body>
+</html>

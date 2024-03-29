@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Construct Corner</title>
+    <style>
+        /* Add your CSS here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #042144f2;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .login-signup {
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .login-signup a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .login-signup a.login-btn {
+            background-color: #9817ed2b;
+            border: 2px solid #9817ed2b;
+        }
+
+        .login-signup a.signup-btn {
+            background-color: transparent;
+            border: 2px solid #9817ed2b;
+        }
+
+        .login-signup a:hover {
+            background-color: #fff;
+            color: #9817ed2b;
+        }
+
+
+        img {
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 25px;
+            height: 150px;
+        }
+
+        footer {
+            background-color: #042144f2;
+            color: white;
+            text-align: center;
+            padding: 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            height: fit-content;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        #home {
+            height: max-content;
+            animation: fadeIn 2s ease-in-out;
+            background-color: #68ba9400;
+
+            height: 70vh;
+            /* Use viewport height for full screen */
+            animation: fadeIn 2s ease-in-out;
+            background-color: #68ba9400;
+            padding: 0px;
+            margin: 0px;
+            /* Add padding */
+            box-sizing: border-box;
+            /* Include padding in height calculation */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .head1 {
+            font-size: 50px;
+            color: #ffffff;
+        }
+
+        .tagline {
+            font-size: 25px;
+            color: #dad0e1;
+        }
+ .box{
+    display: flex;
+ }
+        #about {
+            background-color: #9817ed2b;
+            margin-left: 100px;
+            width: 600px;
+            height: fit-content;
+            padding: 20px;
+        }
+
+        .team-members {
+            display: flex;
+            overflow: hidden;
+            width: 300px;
+            /* Width of the carousel */
+            margin: 0 auto;
+            /* Center the carousel */
+        }
+
+        .team-member {
+            flex: 0 0 100%;
+            /* Each member takes full width */
+            transition: transform 0.5s ease;
+        }
+
+        /* Optional: Make the images and text smaller to fit in the carousel */
+        .team-member img {
+            max-width: 70px;
+            max-height: 70px;
+            border-radius: 50%;
+        }
+
+        .team-member h3 {
+            font-size: 12px;
+        }
+
+        .team-member p {
+            font-size: 10px;
+        }
+
+        #services {
+            background-color: #f0f0f0;
+            padding: 50px 0;
+            text-align: center;
+            font-size: smaller;
+            animation: slideIn 1s ease-in-out;
+            height: fit-content;
+            width: 50%;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .services ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .services ul li {
+            margin: 0 20px 20px;
+            flex: 1 1 300px;
+            max-width: 300px;
+        }
+
+        .service {
+            position: relative;
+            padding: 10px;
+            border: 1px solid #9817ed2b;
+            border-radius: 5px;
+            overflow: hidden;
+            transition: height 0.3s, box-shadow 0.3s;
+            height: 50px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px #9817ed2b;
+        }
+
+        .service:hover {
+            height: auto;
+            /* Expand on hover */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            /* Add shadow on hover */
+        }
+
+        .service h3 {
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+
+        .service p {
+            margin-bottom: 0;
+            font-size: 1.2em;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        #contact {
+            background-color: #001D3D;
+            color: #fff;
+            text-align: center;
+            padding: 50px 0;
+            height: max-content;
+            align-self: center;
+        }
+
+        #contact form {
+            margin-top: 20px;
+        }
+
+        #contact input,
+        #contact textarea,
+        #contact button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        #contact button {
+            background-color: #ffc107;
+            color: #333;
+            cursor: pointer;
+        }
+
+        #contact button:hover {
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+    <script>
+        /* Add your JavaScript here */
+        window.onload = function () {
+            // Add any JavaScript you need here
+        };
+    </script>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <img src="/images/logo.jpeg" alt="Construct Corner Logo">
+        <h2>Construct Corner</h2>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+            <div class="login-signup">
+                <a href="/login.html" class="login-btn">Login/Sign Up Here!</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" style="position: relative;">
+        <video autoplay muted loop
+            style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: -1;">
+            <source src="/images/indian.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div style="position: relative; z-index: 1;">
+            <h1 class="head1">Connecting Companies, Vendors, and Labours</h1>
+            <p class="tagline">
+                Empowering Construction Excellence: Connecting Companies, Vendors, and Labours for Seamless
+                Collaboration and Success.</p>
+            <!-- <img src="/OIP.jpeg" height="200px"> -->
+        </div>
+    </section>
+
+ <div class="box">
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li>
+                <div class="service" id="task-management">
+                    <h3>Task Management</h3>
+                    <p>Efficiently manage and track tasks related to construction projects, including work orders, timelines, and progress tracking.</p>
+                </div>
+            </li>
+            <li>
+                <div class="service" id="vendor-ratings">
+                    <h3>Vendor Ratings</h3>
+                    <p>Provide a platform for companies to rate and review vendors and contractors based on their performance, reliability, and quality of work.</p>
+                </div>
+            </li>
+            <li>
+                <div class="service" id="material-tracking">
+                    <h3>Material Tracking</h3>
+                    <p>Track the usage of materials provided by companies to vendors and contractors, ensuring transparency and accountability.</p>
+                </div>
+            </li>
+            <li>
+                <div class="service" id="one-on-one-interaction">
+                    <h3>One-on-One Interaction</h3>
+                    <p>Facilitate direct communication and collaboration between companies, vendors, and contractors for better project management.</p>
+                </div>
+            </li>
+            <li>
+                <div class="service" id="vendor-badges">
+                    <h3>Vendor Badges</h3>
+                    <p>Award badges to vendors and contractors based on their performance, expertise, and reliability, helping companies identify top performers in the market.</p>
+                </div>
+            </li>
+            <li>
+                <div class="service" id="labor-management">
+                    <h3>Labor Management</h3>
+                    <p>Provide a platform for companies to find and manage laborers for various tasks, categorized by skill level and expertise.</p>
+                </div>
+            </li>
+            </ul>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>
+        <p>Construct Corner is a revolutionary platform that aims to streamline the construction industry by connecting
+            companies, local vendors, and contractors in one efficient ecosystem. Our platform allows companies to
+            easily upload tasks, specify requirements, and find the right vendors and contractors for their projects.
+        </p>
+        <p>For vendors and contractors, Construct Corner provides a platform to showcase their expertise, experience,
+            and capabilities. By creating detailed profiles, vendors and contractors can attract more business and build
+            their reputation in the industry.</p>
+        <p>At Construct Corner, we believe in transparency, efficiency, and quality. Our goal is to simplify the
+            construction process, foster collaboration, and drive success for all stakeholders involved.</p>
+        <div class="team-section">
+            <h1>Our Team</h1>
+            <div class="team-section">
+                <div class="team-members">
+                    <div class="team-member">
+                        <!-- Member 1 content -->
+                        <img src="/images/person1.jpg" alt="Member 1">
+                        <h3>Member 1</h3>
+                        <p>Member 1 is a dedicated professional with a passion for revolutionizing the way companies,
+                            vendors, and contractors interact.</p>
+                    </div>
+                    <div class="team-member">
+                        <!-- Member 2 content -->
+                        <img src="/images/person2.jpg" alt="Member 2">
+                        <h3>Member 2</h3>
+                        <p>Member 2 brings a wealth of experience in the field and is committed to streamlining work
+                            orders, profiles, and interactions.</p>
+                    </div>
+                </div>
+            </div>
+    </section>
+ </div>
+ <script>
+    // JavaScript to handle the carousel effect
+    setInterval(() => {
+        const teamMembers = document.querySelector('.team-members');
+        const firstMember = document.querySelector('.team-member:first-child');
+        teamMembers.classList.add('carousel');
+        setTimeout(() => {
+            teamMembers.appendChild(firstMember);
+            teamMembers.classList.remove('carousel');
+        }, 500); // Same as transition duration
+    }, 3000); // Change member every 3 seconds
+</script>
+
+
+<!--contact-->
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Have a question or need support? Contact us!</p>
+    <form>
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea placeholder="Your Message"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+
+<!-- Footer Section -->
+<footer>
+    <ul>
+        <!-- Your quick links here -->
+    </ul>
+    <p>© 2024 ConstruConnect</p>
+</footer>
+</body>
+
+</html>

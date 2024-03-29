@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff; /* Light grey background */
+}
+
+.container {
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: lemonchiffon; /* White background */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    overflow: hidden;
+}
+
+header {
+    background-color: #5c4db1; /* Dark purple header */
+    color: #ffffff; /* White text */
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd; /* Light grey border */
+}
+
+.profile {
+    margin: 20px auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.name {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.bio,
+.box,
+.past-project,
+.contact {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #c1adad; /* Light grey background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: all 0.3s;
+}
+
+.box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.skill,
+.manpower,
+.equipment {
+    flex: 1;
+    margin: 0 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff; /* Light grey background */
+}
+
+.project1,
+.project2 {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9; /* Light grey background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+.pw{font-size: 20px; color: #5c4db1;}
+
+.project1 ul,
+.project2 ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+
+.project1 ul li,
+.project2 ul li {
+    margin-bottom: 10px;
+}
+
+.footer {
+    background-color: #5c4db1; /* Dark purple footer */
+    color: #ffffff; /* White text */
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid #ddd; /* Light grey border */
+}
+
+.container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+}
+
+.container:hover .profile {
+    transform: rotate(360deg);
+}
+
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .container {
+            animation: fadeIn 1s;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .bio {
+            animation: slideInLeft 1s forwards;
+        }
+
+        .box {
+            animation: slideInRight 1s forwards;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                width: 90%;
+                margin: 20px auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="profile">
+                <img src="/images/user-1.jpeg" alt="Profile Picture">
+            </div>
+            <div class="name">
+                <h1>Tushar Singh</h1>
+            </div>
+        </header>
+        <div class="bio">
+            <div class="bdetails">
+                <p>DOB : 02/07/1998</p>
+                <p>Contact No. : +91 9826784650</p>
+                <p>Nationality : Indian</p>
+                <p>Address : Gopur Square Indore</p>
+            </div>
+            <div class="cdetails">
+                <p>Company Name : Apex Pvt ltd.</p>
+                <p>Bussiness Type : Construction & Electronics</p>
+                <p>Registor's ID : 1876326512</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="skill">
+                <h2>Skills</h2>
+                <ul>
+                    <li>Construction</li>
+                    <li>Renovation</li>
+                    <li>Landscaping</li>
+                    <li>Electric Expert</li>
+                </ul>
+            </div>
+            <div class="manpower">
+                <h2>Man Power</h2>
+                <p>50mens</p>
+                <p>12 skilled person</p>
+            </div>
+            <div class="equipment">
+                <h2>Equipment</h2>
+                <ul>
+                    <li>Aerial Lifts</li>
+                    <li>Trenchers</li>
+                    <li>Hydraulic Cranes</li>
+                </ul>
+            </div>
+        </div>
+        <h2>Previous WorkOrder :</h2>
+        <div class="post">
+            <div class="post-author">
+        
+                <div>
+                    <h1 class="pw">Electricity Experts Pvt. Ltd.</h1>
+                    <small>Providing Reliable Electrical Solutions</small>
+                    <p>Electricity Experts Pvt. Ltd. specializes in providing high-quality electrical services for residential, commercial, and industrial projects. Our team of skilled electricians ensures safe and efficient electrical installations, repairs, and maintenance.</p>
+                    <p><strong>Project Achieved Data:</strong></p>
+                    <ul>
+                        <li>Location: Dewas, Madhya Pradesh</li>
+                        <li>Project Type: Electrical Installation and Maintenance</li>
+                        <li>Scope: Wiring, Lighting, Panel Upgrades</li>
+                        <li>Estimated Budget: $50,000</li>
+                        <li>Timeline: 2 months</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="post">
+                <h1 class="pw">PowerPlus Electricians</h1>
+                <small>Your Trusted Electrical Partner</small>
+                <p>PowerPlus Electricians is a leading electrical services provider known for its exceptional quality and reliable work. We specialize in a wide range of electrical services, including installations, repairs, and maintenance for both residential and commercial projects.</p>
+                <p><strong>Project Achieved Data:</strong></p>
+                <ul>
+                    <li>Location: Indore, Madhya Pradesh</li>
+                    <li>Project Type: Electrical Services</li>
+                    <li>Scope: Wiring, Lighting, Electrical Panel Upgrades</li>
+                    <li>Estimated Budget: $40,000</li>
+                    <li>Timeline: 3 months</li>
+                </ul>
+            </div>
+            <hr>
+            <div class="contact">
+                <h2>Contact - </h2>
+                <p>Email: Tushar98@gmail.com</p>
+                <p>Phone: +91 9826784650 </p>
+            </div>
+        </div>
+        <footer class="footer">
+            <p>&copy; 2024 Vendor Profile. All rights reserved.</p>
+        </footer>
+    </body>
+    
+    </html>

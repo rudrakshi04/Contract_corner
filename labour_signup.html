@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Labour sign up page</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eddedee4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .page-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #2f4f4f;
+    }
+
+    .container {
+      width: fit-content;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h2 {
+      text-size-adjust: 5em;
+      text-align: center;
+      color: #246060;
+
+    }
+
+    h3 {
+      color: #246060;
+      text-align: left;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="file"],
+    input[type="date"] {
+      width: calc(50% - 10px);
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #6f6b6b;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      text-align: left;
+      margin-left: 20px;
+    }
+
+    textarea {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .checkbox-container {
+      margin-top: 20px;
+      display: inline-block;
+      text-align: left;
+    }
+
+    .checkbox-container input[type="checkbox"] {
+      margin-right: 10px;
+    }
+
+    .checkbox-container label {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .insurence {
+      height: 100px;
+      padding-top: 5px;
+    }
+
+    .btn-container {
+      display: flex;
+      margin-top: 25px;
+      margin-left: px;
+      justify-content: space-evenly;
+    }
+
+    .btn-container button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-container button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-container">
+    <div class="container">
+      <form>
+        <h2>Labour SignUp</h2>
+        <br>
+        <div>
+          <h3>Personal Information</h3>
+          <label for="name">Full Name : </label><br>
+          <input type="text" placeholder="FIRST NAME">
+          <input type="text" placeholder="LAST NAME"><br>
+
+          <label for="email">Email Address :</label><br>
+          <input type="email"><br>
+
+          <label for="contact no">Contact no. :</label><br>
+          <input type="text" placeholder="+91"><br>
+
+          <label for="DOB">DOB : </label><br>
+          <input type="date" placeholder="DD/MM/YYYY"><br>
+
+          <label for="Nationality">Nationality :</label><br>
+          <input type="text" placeholder="Nationality"><br>
+
+          <label for="residental address">Residental Address :</label><br>
+          <input type="text"><br>
+
+          <label for="password">Password :</label><br>
+          <input type="password"><br>
+        </div>
+
+        <div>
+          <!-- <h3>Business Details </h3>
+ -->
+        </div>
+
+
+        <div>
+          <h3>Experience and Expertise</h3>
+          <label for="Experience">Years of Experience</label><input type="text"><br>
+          <table id="expertise-table">
+            <thead>
+              <tr>
+                <th>Sr. No.</th>
+                <th>Skills</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td><input type="text" name="skill[]" required></td>
+              </tr>
+            </tbody>
+          </table>
+          <button class="add-row-btn" onclick="addRow('expertise-table')">Add Row</button>
+        </div>
+        <hr>
+        <div>
+
+          <div class="insurence">
+            <p>Do you have any insurance?</p>
+            <div class="btn-container">
+              <label class="radio-label">
+                <input type="radio" name="insurance" value="yes" onclick="selectOption('yes')"> Yes
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="insurance" value="no" onclick="selectOption('no')"> No
+              </label>
+            </div>
+          </div>
+
+        </div>
+        <hr>
+
+        <script>
+          function addRow(tableId) {
+            var table = document.getElementById(tableId).getElementsByTagName('tbody')[0];
+            var newRow = table.insertRow(table.rows.length);
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            if (tableId === 'expertise-table') {
+              cell1.innerHTML = table.rows.length;
+              cell2.innerHTML = '<input type="text" name="skill[]" required>';
+            } else if (tableId === 'certifications-table') {
+              cell1.innerHTML = table.rows.length;
+              cell2.innerHTML = '<input type="text" name="certificate[]" required>';
+              cell3.innerHTML = '<input type="file" name="attachment[]" required>';
+            }
+          }
+          function selectOption(option) {
+            if (option === 'yes') {
+              console.log('User selected Yes');
+            } else if (option === 'no') {
+              console.log('User selected No');
+            }
+          }
+        </script>
+
+        <div class="checkbox-container">
+          <h3>DECLARATION</h3>
+          <p>I hereby declare that all information furnished herein is true and correct to the best of my knowledge, and
+            I accept the terms and conditions outlined.</p>
+          <input type="checkbox" id="declaration-checkbox" required>
+          <label for="declaration-checkbox">I agree to the <a href="/terms_condition.html" class="terms-link">terms
+              and conditions</a>.</label>
+        </div><br>
+        <hr>
+        <div class="btn"> <!--Button-->
+          <a href="/labour_dashboard.html">SUBMIT</a>
+        </div> 
+         <p>Already have an account? <a href="labor_login.html">Login here</a>.</p>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
